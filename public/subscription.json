@@ -1,0 +1,275 @@
+[
+    {
+        "category_id": 101,
+        "category_name": "Mindfulness & Meditation",
+        "category_image": "https://i.ibb.co.com/Xf8tyn8d/Mindfulness-Meditation.jpg",
+        "category_description": "A serene collection of tools and rituals designed to support inner peace, clarity, and daily mindfulness practice.",
+        "products": [
+            {
+                "id": 1,
+                "name": "Herbal Calm Box",
+                "thumbnail": "https://example.com/images/herbal-calm.jpg",
+                "banner": "https://example.com/images/herbal-calm-banner.jpg",
+                "frequency": "Monthly",
+                "price": 39.99,
+                "description": "A soothing collection of herbal teas, calming oils, and de-stress goodies.",
+                "features": [
+                    "Organic Herbal Teas",
+                    "Aromatherapy Oil Blend",
+                    "Guided Meditation Access"
+                ],
+                "subscription_benefits": [
+                    "10% off next order",
+                    "Free sample teas",
+                    "Monthly meditation invite"
+                ],
+                "ratings": 4.7,
+                "number_of_reviews": 198
+            },
+            {
+                "id": 4,
+                "name": "Zen Meditation Box",
+                "thumbnail": "https://example.com/images/zen-box.jpg",
+                "banner": "https://example.com/images/zen-box-banner.jpg",
+                "frequency": "Quarterly",
+                "price": 65.00,
+                "description": "A peaceful blend of tools and guidance for your inner journey.",
+                "features": [
+                    "Meditation Cushion",
+                    "Incense Set",
+                    "Audio Meditations"
+                ],
+                "subscription_benefits": [
+                    "Access to live group meditations",
+                    "Exclusive Q&A with Zen coaches"
+                ],
+                "ratings": 4.8,
+                "number_of_reviews": 180
+            },
+            {
+                "id": 2,
+                "name": "Mindful Morning Box",
+                "thumbnail": "https://example.com/images/mindful-morning.jpg",
+                "banner": "https://example.com/images/mindful-morning-banner.jpg",
+                "frequency": "Monthly",
+                "price": 45.99,
+                "description": "Start your day right with energizing wellness items and rituals.",
+                "features": [
+                    "Hand-roasted Coffee",
+                    "Daily Affirmation Cards",
+                    "Wellness Journal"
+                ],
+                "subscription_benefits": [
+                    "Early bird access to new items",
+                    "Bonus journaling prompts"
+                ],
+                "ratings": 4.9,
+                "number_of_reviews": 225
+            }
+        ]
+    },
+    {
+        "category_id": 102,
+        "category_name": "Skincare & Beauty",
+        "category_image": "https://i.ibb.co.com/MkMv7kQq/Skincare-Beauty.jpg",
+        "category_description": "Glow naturally with handpicked skincare and beauty items made with love, botanicals, and holistic care.",
+        "products": [
+            {
+                "id": 3,
+                "name": "Skincare Ritual Box",
+                "thumbnail": "https://example.com/images/skincare-box.jpg",
+                "banner": "https://example.com/images/skincare-box-banner.jpg",
+                "frequency": "Monthly",
+                "price": 52.00,
+                "description": "Experience glowing skin with organic, small-batch skincare essentials.",
+                "features": [
+                    "Handmade Face Masks",
+                    "Botanical Toners",
+                    "Gua Sha Tool"
+                ],
+                "subscription_benefits": [
+                    "Free skincare tutorial",
+                    "Priority product testing"
+                ],
+                "ratings": 4.6,
+                "number_of_reviews": 140
+            },
+            {
+                "id": 6,
+                "name": "Candle Therapy Box",
+                "thumbnail": "https://example.com/images/candle-therapy.jpg",
+                "banner": "https://example.com/images/candle-therapy-banner.jpg",
+                "frequency": "Monthly",
+                "price": 35.00,
+                "description": "Hand-poured candles with aromatherapy benefits for every mood.",
+                "features": [
+                    "3 Scented Candles",
+                    "Mood Guide",
+                    "Bonus Wick Trimmer"
+                ],
+                "subscription_benefits": [
+                    "Exclusive candle blends",
+                    "Candle care tips"
+                ],
+                "ratings": 4.9,
+                "number_of_reviews": 310
+            },
+            {
+                "id": 5,
+                "name": "Ayurveda Balance Box",
+                "thumbnail": "https://example.com/images/ayurveda-box.jpg",
+                "banner": "https://example.com/images/ayurveda-box-banner.jpg",
+                "frequency": "Monthly",
+                "price": 59.99,
+                "description": "Balance your dosha with carefully selected Ayurvedic herbs and tools.",
+                "features": [
+                    "Dosha Assessment Kit",
+                    "Herbal Supplements",
+                    "Meal Plan Cards"
+                ],
+                "subscription_benefits": [
+                    "15% off herbs",
+                    "Free monthly dosha quiz"
+                ],
+                "ratings": 4.5,
+                "number_of_reviews": 105
+            }
+        ]
+    },
+    {
+        "category_id": 103,
+        "category_name": "Nutrition & Detox",
+        "category_image": "https://i.ibb.co.com/8nXsNr7P/Nutrition-Detox.jpg",
+        "category_description": "Revitalize your body with clean, plant-based essentials that nourish, energize, and support detoxification.",
+        "products": [
+            {
+                "id": 9,
+                "name": "Detox Essentials Box",
+                "thumbnail": "https://example.com/images/detox-box.jpg",
+                "banner": "https://example.com/images/detox-box-banner.jpg",
+                "frequency": "Bi-Monthly",
+                "price": 55.99,
+                "description": "Cleanse your body naturally with detox teas, baths, and recipes.",
+                "features": [
+                    "Detox Tea",
+                    "Clay Mask",
+                    "Detox Bath Soak"
+                ],
+                "subscription_benefits": [
+                    "Free detox eBook",
+                    "Nutritional tips"
+                ],
+                "ratings": 4.4,
+                "number_of_reviews": 121
+            },
+            {
+                "id": 12,
+                "name": "Plant Power Box",
+                "thumbnail": "https://example.com/images/plant-power.jpg",
+                "banner": "https://example.com/images/plant-power-banner.jpg",
+                "frequency": "Quarterly",
+                "price": 60.00,
+                "description": "Nutrient-rich plant-based snacks, drinks, and lifestyle tools.",
+                "features": [
+                    "Vegan Snacks",
+                    "Superfood Blends",
+                    "Reusable Tote Bag"
+                ],
+                "subscription_benefits": [
+                    "Early access to vegan recipes",
+                    "10% off next plant box"
+                ],
+                "ratings": 4.7,
+                "number_of_reviews": 160
+            },
+            {
+                "id": 11,
+                "name": "Yoga Boost Box",
+                "thumbnail": "https://example.com/images/yoga-box.jpg",
+                "banner": "https://example.com/images/yoga-box-banner.jpg",
+                "frequency": "Monthly",
+                "price": 48.00,
+                "description": "Enhance your yoga practice with gear, flows, and natural fuel.",
+                "features": [
+                    "Yoga Strap",
+                    "Flow Guide",
+                    "Energy Snack Pack"
+                ],
+                "subscription_benefits": [
+                    "Free virtual class",
+                    "Asana poster"
+                ],
+                "ratings": 4.8,
+                "number_of_reviews": 178
+            }
+        ]
+    },
+    {
+        "category_id": 104,
+        "category_name": "Self-Care & Lifestyle",
+        "category_image": "https://i.ibb.co.com/0pB4bp6Q/Self-Care-Lifestyle.jpg",
+        "category_description": "Soul-soothing boxes filled with calming, uplifting tools for rest, joy, and personal rituals of self-love.",
+        "products": [
+            {
+                "id": 7,
+                "name": "Sleep Support Box",
+                "thumbnail": "https://example.com/images/sleep-box.jpg",
+                "banner": "https://example.com/images/sleep-box-banner.jpg",
+                "frequency": "Monthly",
+                "price": 42.50,
+                "description": "Curated sleep aids to help you rest deeper and wake up refreshed.",
+                "features": [
+                    "Sleep Spray",
+                    "Silk Eye Mask",
+                    "Sleep Journal"
+                ],
+                "subscription_benefits": [
+                    "Sleep coach session",
+                    "Extra herbal tea sachets"
+                ],
+                "ratings": 4.6,
+                "number_of_reviews": 165
+            },
+            {
+                "id": 10,
+                "name": "Self-Love Kit",
+                "thumbnail": "https://example.com/images/self-love.jpg",
+                "banner": "https://example.com/images/self-love-banner.jpg",
+                "frequency": "Monthly",
+                "price": 39.99,
+                "description": "Nurture yourself with affirmations, baths, and beauty.",
+                "features": [
+                    "Affirmation Deck",
+                    "Bath Bombs",
+                    "Love Letter Templates"
+                ],
+                "subscription_benefits": [
+                    "Community forum access",
+                    "Bonus love candle"
+                ],
+                "ratings": 4.9,
+                "number_of_reviews": 230
+            },
+            {
+                "id": 8,
+                "name": "Tea & Tarot Box",
+                "thumbnail": "https://example.com/images/tea-tarot.jpg",
+                "banner": "https://example.com/images/tea-tarot-banner.jpg",
+                "frequency": "Monthly",
+                "price": 49.00,
+                "description": "Sip and reflect with herbal teas and guided tarot readings.",
+                "features": [
+                    "Tarot Deck",
+                    "2 Herbal Tea Blends",
+                    "Interpretation Guide"
+                ],
+                "subscription_benefits": [
+                    "Live Tarot Zoom Call",
+                    "Mystery crystal gift"
+                ],
+                "ratings": 4.7,
+                "number_of_reviews": 192
+            }
+        ]
+    }
+]

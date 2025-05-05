@@ -6,7 +6,9 @@ const HomeLayout = () => {
     return (
         <div className=''>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className=''>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };

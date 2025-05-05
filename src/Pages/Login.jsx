@@ -1,23 +1,47 @@
-import { Link } from "react-router";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
+    const { login, setUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        login(email, password)
+        .then((result) => {
+            const user = result.user;
+            setUser(user);
+            navigate('/dashboard')
+            toast.success("Login Successfully");
+        })
+        .catch(error => {
+            toast.error(error.message)
+        })
+    };
 
     return (
         <div className="">
             <div className="w-full max-w-md mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
-                <form noValidate="" action="" className="space-y-6">
+                <form onSubmit={handleLogin} noValidate="" action="" className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label
-                            htmlFor="username"
+                            htmlFor="email"
                             className="block dark:text-gray-600">
-                            Username
+                            Email
                         </label>
                         <input
-                            type="text"
-                            name="username"
-                            id="username"
-                            placeholder="Username"
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
                             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                         />
                     </div>
@@ -85,7 +109,8 @@ const Login = () => {
                 </div>
                 <p className="text-xs text-center sm:px-6 dark:text-gray-600">
                     Don't have an account?
-                    <Link to='/auth/register'
+                    <Link
+                        to="/auth/register"
                         rel="noopener noreferrer"
                         href="#"
                         className="underline dark:text-gray-800 ml-2">

@@ -2,9 +2,20 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/SubCloud.png";
 import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logout()
+        .then(()=> {
+
+        })
+        .catch(error => {
+            toast.error(error.message);
+        })
+    }
 
     const links = (
         <>
@@ -65,14 +76,14 @@ const Navbar = () => {
             <div className="navbar-end flex items-center gap-4">
                 {user && (
                     <div className="avatar">
-                        <div className="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2">
-                            <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
+                        <div className={`ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2`} title={user ? user.displayName : "User Name Nai.."}>
+                            <img src={user.photoURL}/>
                         </div>
                     </div>
                 )}
                 {user ? (
                     <>
-                        <Link
+                        <Link onClick={handleLogout}
                             to="/auth/login"
                             className="btn bg-[#4E8098] text-white">
                             Log Out

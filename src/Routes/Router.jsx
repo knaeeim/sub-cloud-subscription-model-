@@ -4,6 +4,7 @@ import Home from "../Components/Home";
 import AuthLayOut from "../LayOuts/AuthLayOut";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Loading from "../Components/Loading";
 
 
 export const router = createBrowserRouter([
@@ -13,7 +14,9 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('/subscription.json'),
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/dashboard',

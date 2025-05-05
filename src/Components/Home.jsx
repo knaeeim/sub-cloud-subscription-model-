@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Context/AuthContext';
+import Loading from './Loading';
+import Banner from './Banner';
+import Categories from './Categories';
 
 const Home = () => {
+    const { loading } = useContext(AuthContext);
+
+    if(loading){
+        return <Loading></Loading>
+    }
+
     return (
         <div>
-            <h1>Welcome to Home.......</h1>
+            <Banner></Banner>
+            <Categories></Categories>
         </div>
     );
 };
