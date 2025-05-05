@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Category = ({ category }) => {
     console.log(category);
@@ -17,7 +18,7 @@ const Category = ({ category }) => {
                         {category.category_description}
                     </p>
                     <div className="card-actions justify-end">
-                        <button className="btn bg-[#4E8098] text-white">Browse</button>
+                        <Link to={`/category/${category.category_id}`}><button className="btn bg-[#00A9A5] text-white">Browse</button></Link>
                     </div>
                 </div>
             </div>

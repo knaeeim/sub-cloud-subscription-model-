@@ -5,6 +5,8 @@ import AuthLayOut from "../LayOuts/AuthLayOut";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Loading from "../Components/Loading";
+import CategoryDetails from "../Components/CategoryDetails";
+import Subscription from "../Components/Subscription";
 
 
 export const router = createBrowserRouter([
@@ -21,6 +23,18 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <h1>Welcome to Dashboard</h1>
+            },
+            {
+                path: 'category/:id',
+                element: <CategoryDetails></CategoryDetails>,
+                loader: () => fetch('/subscription.json'),
+                hydrateFallbackElement: <Loading></Loading>
+            }, 
+            {
+                path: 'subscription/:id',
+                element: <Subscription></Subscription>,
+                loader: () => fetch('/subscription.json'),
+                hydrateFallbackElement: <Loading></Loading>
             }
         ]
     },

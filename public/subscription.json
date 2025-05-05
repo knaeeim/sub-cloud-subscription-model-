@@ -8,10 +8,14 @@
             {
                 "id": 1,
                 "name": "Herbal Calm Box",
-                "thumbnail": "https://example.com/images/herbal-calm.jpg",
-                "banner": "https://example.com/images/herbal-calm-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/fV3zrQc0/Herbal-Calm-Box.jpg",
+                "banner": "https://i.ibb.co.com/fV3zrQc0/Herbal-Calm-Box.jpg",
                 "frequency": "Monthly",
-                "price": 39.99,
+                "price": {
+                    "3_months": 113.97,
+                    "6_months": 221.94,
+                    "12_months": 431.89
+                },
                 "description": "A soothing collection of herbal teas, calming oils, and de-stress goodies.",
                 "features": [
                     "Organic Herbal Teas",
@@ -29,10 +33,14 @@
             {
                 "id": 4,
                 "name": "Zen Meditation Box",
-                "thumbnail": "https://example.com/images/zen-box.jpg",
-                "banner": "https://example.com/images/zen-box-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/Dh1Q2fm/Zen-Meditation-Box.jpg",
+                "banner": "https://i.ibb.co.com/Dh1Q2fm/Zen-Meditation-Box.jpg",
                 "frequency": "Quarterly",
-                "price": 65.00,
+                "price": {
+                    "3_months": 195.00,
+                    "6_months": 380.00,
+                    "12_months": 740.00
+                },
                 "description": "A peaceful blend of tools and guidance for your inner journey.",
                 "features": [
                     "Meditation Cushion",
@@ -49,10 +57,14 @@
             {
                 "id": 2,
                 "name": "Mindful Morning Box",
-                "thumbnail": "https://example.com/images/mindful-morning.jpg",
-                "banner": "https://example.com/images/mindful-morning-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/G3F8V0DL/Mindful-Morning-Box.jpg",
+                "banner": "https://i.ibb.co.com/G3F8V0DL/Mindful-Morning-Box.jpg",
                 "frequency": "Monthly",
-                "price": 45.99,
+                "price": {
+                    "3_months": 128.97,
+                    "6_months": 251.94,
+                    "12_months": 489.49
+                },
                 "description": "Start your day right with energizing wellness items and rituals.",
                 "features": [
                     "Hand-roasted Coffee",
@@ -77,10 +89,14 @@
             {
                 "id": 3,
                 "name": "Skincare Ritual Box",
-                "thumbnail": "https://example.com/images/skincare-box.jpg",
-                "banner": "https://example.com/images/skincare-box-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/G3F8V0DL/Mindful-Morning-Box.jpg",
+                "banner": "https://i.ibb.co.com/G3F8V0DL/Mindful-Morning-Box.jpg",
                 "frequency": "Monthly",
-                "price": 52.00,
+                "price": {
+                    "3_months": 156.00,
+                    "6_months": 304.00,
+                    "12_months": 590.00
+                },
                 "description": "Experience glowing skin with organic, small-batch skincare essentials.",
                 "features": [
                     "Handmade Face Masks",
@@ -97,10 +113,14 @@
             {
                 "id": 6,
                 "name": "Candle Therapy Box",
-                "thumbnail": "https://example.com/images/candle-therapy.jpg",
-                "banner": "https://example.com/images/candle-therapy-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/5Xzq7FvC/Candle-Therapy-Box.jpg",
+                "banner": "https://i.ibb.co.com/5Xzq7FvC/Candle-Therapy-Box.jpg",
                 "frequency": "Monthly",
-                "price": 35.00,
+                "price": {
+                    "3_months": 105.00,
+                    "6_months": 204.00,
+                    "12_months": 396.00
+                },
                 "description": "Hand-poured candles with aromatherapy benefits for every mood.",
                 "features": [
                     "3 Scented Candles",
@@ -117,10 +137,14 @@
             {
                 "id": 5,
                 "name": "Ayurveda Balance Box",
-                "thumbnail": "https://example.com/images/ayurveda-box.jpg",
-                "banner": "https://example.com/images/ayurveda-box-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/dsLS6d42/Ayurveda-Balance-Box.jpg",
+                "banner": "https://i.ibb.co.com/dsLS6d42/Ayurveda-Balance-Box.jpg",
                 "frequency": "Monthly",
-                "price": 59.99,
+                "price": {
+                    "3_months": 179.97,
+                    "6_months": 347.94,
+                    "12_months": 676.89
+                },
                 "description": "Balance your dosha with carefully selected Ayurvedic herbs and tools.",
                 "features": [
                     "Dosha Assessment Kit",
@@ -145,10 +169,14 @@
             {
                 "id": 9,
                 "name": "Detox Essentials Box",
-                "thumbnail": "https://example.com/images/detox-box.jpg",
-                "banner": "https://example.com/images/detox-box-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/Zp2ZSrvd/Detox-Essentials-Box.jpg",
+                "banner": "https://i.ibb.co.com/Zp2ZSrvd/Detox-Essentials-Box.jpg",
                 "frequency": "Bi-Monthly",
-                "price": 55.99,
+                "price": {
+                    "3_months": 167.97,
+                    "6_months": 328.94,
+                    "12_months": 639.89
+                },
                 "description": "Cleanse your body naturally with detox teas, baths, and recipes.",
                 "features": [
                     "Detox Tea",
@@ -165,10 +193,14 @@
             {
                 "id": 12,
                 "name": "Plant Power Box",
-                "thumbnail": "https://example.com/images/plant-power.jpg",
-                "banner": "https://example.com/images/plant-power-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/QFWw8CmW/Plant-Power-Box.jpg",
+                "banner": "https://i.ibb.co.com/QFWw8CmW/Plant-Power-Box.jpg",
                 "frequency": "Quarterly",
-                "price": 60.00,
+                "price": {
+                    "3_months": 180.00,
+                    "6_months": 352.00,
+                    "12_months": 684.00
+                },
                 "description": "Nutrient-rich plant-based snacks, drinks, and lifestyle tools.",
                 "features": [
                     "Vegan Snacks",
@@ -185,10 +217,14 @@
             {
                 "id": 11,
                 "name": "Yoga Boost Box",
-                "thumbnail": "https://example.com/images/yoga-box.jpg",
-                "banner": "https://example.com/images/yoga-box-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/v4mvnSyG/Yoga-Boost-Box.jpg",
+                "banner": "https://i.ibb.co.com/v4mvnSyG/Yoga-Boost-Box.jpg",
                 "frequency": "Monthly",
-                "price": 48.00,
+                "price": {
+                    "3_months": 144.00,
+                    "6_months": 280.00,
+                    "12_months": 540.00
+                },
                 "description": "Enhance your yoga practice with gear, flows, and natural fuel.",
                 "features": [
                     "Yoga Strap",
@@ -213,10 +249,14 @@
             {
                 "id": 7,
                 "name": "Sleep Support Box",
-                "thumbnail": "https://example.com/images/sleep-box.jpg",
-                "banner": "https://example.com/images/sleep-box-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/yncX54hX/Sleep-Support-Box.jpg",
+                "banner": "https://i.ibb.co.com/yncX54hX/Sleep-Support-Box.jpg",
                 "frequency": "Monthly",
-                "price": 42.50,
+                "price": {
+                    "3_months": 127.50,
+                    "6_months": 248.00,
+                    "12_months": 477.00
+                },
                 "description": "Curated sleep aids to help you rest deeper and wake up refreshed.",
                 "features": [
                     "Sleep Spray",
@@ -233,10 +273,14 @@
             {
                 "id": 10,
                 "name": "Self-Love Kit",
-                "thumbnail": "https://example.com/images/self-love.jpg",
-                "banner": "https://example.com/images/self-love-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/8DWVqhJ6/Self-Love-Kit.jpg",
+                "banner": "https://i.ibb.co.com/8DWVqhJ6/Self-Love-Kit.jpg",
                 "frequency": "Monthly",
-                "price": 39.99,
+                "price": {
+                    "3_months": 113.97,
+                    "6_months": 221.94,
+                    "12_months": 431.89
+                },
                 "description": "Nurture yourself with affirmations, baths, and beauty.",
                 "features": [
                     "Affirmation Deck",
@@ -253,10 +297,14 @@
             {
                 "id": 8,
                 "name": "Tea & Tarot Box",
-                "thumbnail": "https://example.com/images/tea-tarot.jpg",
-                "banner": "https://example.com/images/tea-tarot-banner.jpg",
+                "thumbnail": "https://i.ibb.co.com/gMRFgcV8/Tea-Tarot-Box.jpg",
+                "banner": "https://i.ibb.co.com/gMRFgcV8/Tea-Tarot-Box.jpg",
                 "frequency": "Monthly",
-                "price": 49.00,
+                "price": {
+                    "3_months": 147.00,
+                    "6_months": 284.00,
+                    "12_months": 552.00
+                },
                 "description": "Sip and reflect with herbal teas and guided tarot readings.",
                 "features": [
                     "Tarot Deck",
