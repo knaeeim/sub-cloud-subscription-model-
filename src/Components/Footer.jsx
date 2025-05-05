@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="px-4 divide-y dark:bg-gray-100 dark:text-gray-800">
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-                <div className="lg:w-1/3">
+                <div className="lg:w-2/4">
                     <a
                         rel="noopener noreferrer"
                         className="flex justify-center space-x-3 lg:justify-start">
@@ -18,36 +18,36 @@ const Footer = () => {
                         </span>
                     </a>
                 </div>
-                <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-                    <div className="space-y-3">
-                        <h3 className="tracking-wide uppercase dark:text-gray-900">
+                <div className="grid grid-cols-2 text-sm gap-x-6 gap-y-8 lg:w-3/4 sm:grid-cols-3">
+                    <div className="space-y-3 text-center">
+                        <h3 className="tracking-wide uppercase font-bold">
                             Category
                         </h3>
                         <ul className="space-y-1">
                             <li>
-                                <Link rel="noopener noreferrer" href="#">
+                                <Link to='category/101' rel="noopener noreferrer" href="#">
                                     Mindfulness & Meditation
                                 </Link>
                             </li>
                             <li>
-                                <Link rel="noopener noreferrer" href="#">
+                                <Link to='category/102' rel="noopener noreferrer" href="#">
                                     Skincare & Beauty
                                 </Link>
                             </li>
                             <li>
-                                <Link rel="noopener noreferrer" href="#">
+                                <Link to='category/103' rel="noopener noreferrer" href="#">
                                     Nutrition & Detox
                                 </Link>
                             </li>
                             <li>
-                                <Link to='' rel="noopener noreferrer" href="#">
+                                <Link to='category/104' rel="noopener noreferrer" href="#">
                                     Self-Care & Lifestyle
                                 </Link>
                             </li>
                         </ul>
                     </div>
-                    <div className="space-y-3">
-                        <h3 className="tracking-wide uppercase dark:text-gray-900">
+                    <div className="space-y-3 text-center">
+                        <h3 className="tracking-wide uppercase font-bold">
                             Company
                         </h3>
                         <ul className="space-y-1">
@@ -63,30 +63,8 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="space-y-3">
-                        <h3 className="uppercase dark:text-gray-900">
-                            Developers
-                        </h3>
-                        <ul className="space-y-1">
-                            <li>
-                                <a rel="noopener noreferrer" href="#">
-                                    Public API
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="noopener noreferrer" href="#">
-                                    Documentation
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="noopener noreferrer" href="#">
-                                    Guides
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="space-y-3">
-                        <div className="uppercase dark:text-gray-900">
+                    <div className="space-y-3 sm:col-span-1 col-span-2 sm:order-none order-last mx-auto text-center">
+                        <div className="uppercase font-bold">
                             Social media
                         </div>
                         <div className="flex justify-start space-x-3">

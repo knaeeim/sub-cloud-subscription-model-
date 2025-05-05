@@ -22,7 +22,7 @@ const Navbar = () => {
             <NavLink
                 className={({ isActive }) =>
                     isActive
-                        ? "bg-[#092327] px-3 py-2 rounded-2xl mx-3 text-white"
+                        ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
                         : "mx-3 px-3 py-2"
                 }
                 to="/">
@@ -31,7 +31,7 @@ const Navbar = () => {
             <NavLink
                 className={({ isActive }) =>
                     isActive
-                        ? "bg-[#092327] px-3 py-2 rounded-2xl mx-3 text-white"
+                        ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
                         : "mx-3 px-3 py-2"
                 }
                 to="/dashboard">

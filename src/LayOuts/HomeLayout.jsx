@@ -7,7 +7,7 @@ const HomeLayout = () => {
     return (
         <div className=''>
             <Navbar></Navbar>
-            <div className=''>
+            <div className='bg-[#90C2E7]'>
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
