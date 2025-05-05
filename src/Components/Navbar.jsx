@@ -1,14 +1,17 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router";
 import logo from "../assets/SubCloud.png";
+import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext);
+
     const links = (
         <>
             <NavLink
                 className={({ isActive }) =>
                     isActive
-                        ? "bg-blue-300 px-3 py-2 rounded-2xl mx-3"
+                        ? "bg-[#092327] px-3 py-2 rounded-2xl mx-3 text-white"
                         : "mx-3 px-3 py-2"
                 }
                 to="/">
@@ -17,7 +20,7 @@ const Navbar = () => {
             <NavLink
                 className={({ isActive }) =>
                     isActive
-                        ? "bg-blue-300 px-3 py-2 rounded-2xl mx-3"
+                        ? "bg-[#092327] px-3 py-2 rounded-2xl mx-3 text-white"
                         : "mx-3 px-3 py-2"
                 }
                 to="/dashboard">
@@ -26,13 +29,10 @@ const Navbar = () => {
         </>
     );
     return (
-        <div className="navbar bg-base-200 shadow-sm px-16">
+        <div className="navbar bg-base-200 shadow-sm lg:px-16 md:px-10">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div
-                        tabIndex={0}
-                        role="button"
-                        className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -63,12 +63,33 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">{links}</ul>
             </div>
             <div className="navbar-end flex items-center gap-4">
-                <div className="avatar">
-                    <div className="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2">
-                        <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
+                {user && (
+                    <div className="avatar">
+                        <div className="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2">
+                            <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
+                        </div>
                     </div>
-                </div>
-                <a className="btn">Log In</a>
+                )}
+                {user ? (
+                    <>
+                        <Link
+                            to="/auth/login"
+                            className="btn bg-[#4E8098] text-white">
+                            Log Out
+                        </Link>
+                    </>
+                ) : (
+                    <>
+                        <Link
+                            to="/auth/login"
+                            className="btn bg-[#4E8098] text-white">
+                            Log In
+                        </Link>
+                        <Link to="/auth/register" className="btn bg-[#90C2E7]">
+                            Register
+                        </Link>
+                    </>
+                )}
             </div>
         </div>
     );

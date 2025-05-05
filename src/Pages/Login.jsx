@@ -1,7 +1,7 @@
-import React from "react";
 import { Link } from "react-router";
 
 const Login = () => {
+
     return (
         <div className="">
             <div className="w-full max-w-md mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">

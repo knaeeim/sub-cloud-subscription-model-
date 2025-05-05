@@ -1,12 +1,44 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleCreateUser = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        console.log(form);
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photoUrl = form.photoUrl.value;
+
+        console.log(createUser);
+        createUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                navigate('/dashboard')
+                toast.success("User Created Successfully");
+            })
+            .then((error) => {
+                console.log(error);
+            });
+    };
+
     return (
         <div>
             <div className="w-full min-w-2xl mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
-                <form noValidate="" action="" className="space-y-6">
+                <form
+                    onSubmit={handleCreateUser}
+                    noValidate=""
+                    action=""
+                    className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* left side div */}
                         <div className="space-y-6">
