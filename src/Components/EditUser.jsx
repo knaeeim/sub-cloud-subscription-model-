@@ -11,6 +11,10 @@ const EditUser = () => {
     const [photoURL, setPhotoURL] = useState("")
 
     useEffect(() => {
+        document.title = "SubCloud || Edit User";
+    }, []);
+
+    useEffect(() => {
         if(user){
             setName(user?.displayName || "")
             setPhotoURL(user?.photoURL || " ")

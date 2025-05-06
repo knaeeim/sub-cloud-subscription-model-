@@ -13,7 +13,7 @@ const DashBoard = () => {
 
     useEffect(() => {
         document.title = "SubCloud || DashBoard";
-    });
+    },[]);
 
     if (loading) {
         return <Loading></Loading>;

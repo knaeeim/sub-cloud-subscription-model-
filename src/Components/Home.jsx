@@ -11,7 +11,7 @@ const Home = () => {
 
     useEffect(() => {
         document.title = 'SubCloud || Home';
-    })
+    }, [])
 
     if(loading){
         return <Loading></Loading>

@@ -11,14 +11,17 @@ const ProductCard = ({ product, cat_id }) => {
         setFindCat(findCategory);
     },[data, cat_id])
     
+    useEffect(() => {
+        document.title = `SubCloud || ${product.name}`;
+    }, [product.name]);
+    
 
     const handleSubsPage = () => {
         navigate(`/subscription/${cat_id}/${product.id}`);
     };
-    
+
     return (
         <div className="">
-            <title>SubCloud || {product.name}</title>
             <div className="card bg-base-100 shadow-sm relative">
                 <figure>
                     <img src={product.banner} alt="Shoes" />

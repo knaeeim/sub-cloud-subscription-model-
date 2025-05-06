@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router";
 
 const ErrorPage = () => {
+    useEffect(() => {
+        document.title = "SubCloud || Error Page";
+    }, []);
     return (
         <section className="flex items-center h-full sm:p-16 dark:bg-gray-50 dark:text-gray-800">
             <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">

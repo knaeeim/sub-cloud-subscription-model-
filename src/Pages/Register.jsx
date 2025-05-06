@@ -1,21 +1,32 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser, setUser, updateUserProfile, GoogleSignIn, setLoading, user } = useContext(AuthContext);
+    const {
+        createUser,
+        setUser,
+        updateUserProfile,
+        GoogleSignIn,
+        setLoading,
+        user,
+    } = useContext(AuthContext);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
     const isPasswordValid = (password) => {
-        const minLenght = 6; 
+        const minLenght = 6;
         const hasUpperCase = /[A-Z]/;
         const hasLowerCase = /[a-z]/;
 
-        return password.length >= minLenght && hasUpperCase.test(password) && hasLowerCase.test(password);
-    }
+        return (
+            password.length >= minLenght &&
+            hasUpperCase.test(password) &&
+            hasLowerCase.test(password)
+        );
+    };
 
     const handleCreateUser = (e) => {
         e.preventDefault();
@@ -26,8 +37,10 @@ const Register = () => {
         const password = form.password.value;
         const photoUrl = form.photoUrl.value;
 
-        if(!isPasswordValid(password)){
-            toast.error("Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter.");
+        if (!isPasswordValid(password)) {
+            toast.error(
+                "Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter."
+            );
             return;
         }
 
@@ -38,9 +51,9 @@ const Register = () => {
                     displayName: name,
                     photoURL: photoUrl,
                 };
-                setUser({...user, displayName: name, photoURL: photoUrl});
+                setUser({ ...user, displayName: name, photoURL: photoUrl });
                 // Update user profile
-                updateUserProfile(userInfo)
+                updateUserProfile(userInfo);
                 setLoading(false);
                 toast.success("User Created Successfully");
                 navigate("/dashboard");
@@ -53,20 +66,23 @@ const Register = () => {
 
     const handleGoogleSignIn = () => {
         GoogleSignIn()
-        .then((result) => {
-            const user = result.user;
-            setUser(user);
-            navigate("/dashboard");
-        })
-        .catch((error) => {
-            toast.error(error.message);
-            setLoading(false);
-        })
-    }
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                navigate("/dashboard");
+            })
+            .catch((error) => {
+                toast.error(error.message);
+                setLoading(false);
+            });
+    };
+
+    useEffect(() => {
+        document.title = "SubCloud || Register";
+    }, []);
 
     return (
         <div className="w-full">
-            <title>SubCloud || React</title>
             <div className="w-full md:min-w-2xl max-w-md mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100 mt-4">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form
@@ -142,9 +158,21 @@ const Register = () => {
                                     required
                                     className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                                 />
-                                {
-                                    showPassword ? (<FaEyeSlash className="absolute top-10 right-2" onClick={()=>setShowPassword(prev => !prev)}/>) : (<FaEye className="absolute top-10 right-2" onClick={()=>setShowPassword(prev => !prev)}/>)
-                                }
+                                {showPassword ? (
+                                    <FaEyeSlash
+                                        className="absolute top-10 right-2"
+                                        onClick={() =>
+                                            setShowPassword((prev) => !prev)
+                                        }
+                                    />
+                                ) : (
+                                    <FaEye
+                                        className="absolute top-10 right-2"
+                                        onClick={() =>
+                                            setShowPassword((prev) => !prev)
+                                        }
+                                    />
+                                )}
                                 <div className="flex justify-end text-xs dark:text-gray-600">
                                     <a rel="noopener noreferrer" href="#">
                                         Forgot Password?
