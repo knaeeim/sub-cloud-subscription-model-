@@ -3,12 +3,12 @@ import CountUp from "react-countup";
 
 const Counting = () => {
     return (
-        <div className="w-11/12 mx-auto rounded-2xl md:px-20 md:pb-20 mt-8">
-            <div className="text-center space-y-4 w-9/12 mx-auto">
-                <h1 className="text-4xl font-bold">
+        <div className="w-11/12 mx-auto rounded-2xl md:px-20 md:pb-20 mt-8 pb-8">
+            <div className="text-center space-y-4 md:w-9/12 w-full mx-auto">
+                <h1 className="md:text-4xl text-lg font-bold">
                     Curated Lifestyle Boxes Just for You
                 </h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="md:text-lg text-xs text-gray-600 max-w-2xl mx-auto">
                     Discover a world of handpicked lifestyle products, bundled
                     into irresistible monthly boxes — all at an affordable
                     price. From wellness to beauty and beyond, we’ve already

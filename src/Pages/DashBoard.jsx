@@ -26,16 +26,16 @@ const DashBoard = () => {
     return (
         <div>
             <div className="min-h-[calc(100vh-500px)] py-10 px-4">
-                <div className="max-w-7xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+                <div className="md:max-w-7xl max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden">
                     <div className="bg-gradient-to-r from-[#4E8098] to-[#0B5351] h-32"></div>
-                    <div className="flex items-center px-6 -mt-[92px]">
+                    <div className="flex items-center px-6 md:-mt-[92px] -mt-[48px]">
                         <img
-                            className="w-32 h-32 rounded-full border-4 border-[#0B5351] shadow-md"
+                            className="md:w-32 md:h-32 w-16 h-16 rounded-full border-4 border-[#0B5351] shadow-md"
                             src={user?.photoURL}
                             alt="User avatar"
                         />
                         <div className="ml-3">
-                            <h2 className="text-4xl font-semibold text-white">
+                            <h2 className="md:text-4xl text-md font-semibold text-white">
                                 {user?.displayName}
                             </h2>
                             <p className="text-sm text-gray-500">
@@ -46,7 +46,7 @@ const DashBoard = () => {
                     <div className="px-6 py-4">
                         <button
                             onClick={handleEditPage}
-                            className="btn bg-[#4E8098] text-white">
+                            className="btn btn-sm md:btn-md bg-[#4E8098] text-white">
                             Edit Profile
                         </button>
                     </div>

@@ -98,7 +98,7 @@ const Navbar = () => {
                 {user && (
                     <div className="avatar">
                         <div
-                            className={`ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2`}>
+                            className={`ring-primary ring-offset-base-100 md:w-8 w-6 rounded-full ring-2 ring-offset-2`}>
                             <img src={user.photoURL} alt={user.displayName || "Not Found"} title={user ? user.displayName : "User Name Nai.."}/>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ const Navbar = () => {
                         <Link
                             onClick={handleLogout}
                             to="/auth/login"
-                            className="btn bg-[#4E8098] text-white">
+                            className="btn bg-[#4E8098] btn-sm md:btn-md text-white">
                             Log Out
                         </Link>
                     </>
