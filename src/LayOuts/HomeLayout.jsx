@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import Loading from '../Components/Loading';
 
 const HomeLayout = () => {
+
+    const { state } = useNavigation();
+
     useEffect(() => {
         document.title = 'SubCloud || Home';
     })
@@ -11,7 +15,7 @@ const HomeLayout = () => {
         <div className=''>
             <Navbar></Navbar>
             <div className='bg-[#90C2E7]'>
-                <Outlet></Outlet>
+                {state === 'loading' ? <Loading></Loading> : <Outlet></Outlet>}
             </div>
             <Footer></Footer>
         </div>

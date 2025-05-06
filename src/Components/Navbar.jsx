@@ -98,9 +98,8 @@ const Navbar = () => {
                 {user && (
                     <div className="avatar">
                         <div
-                            className={`ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2`}
-                            title={user ? user.displayName : "User Name Nai.."}>
-                            <img src={user.photoURL} />
+                            className={`ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2`}>
+                            <img src={user.photoURL} alt={user.displayName || "Not Found"} title={user ? user.displayName : "User Name Nai.."}/>
                         </div>
                     </div>
                 )}

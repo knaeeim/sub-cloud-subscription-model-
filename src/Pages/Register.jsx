@@ -9,6 +9,14 @@ const Register = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
+    const isPasswordValid = (password) => {
+        const minLenght = 6; 
+        const hasUpperCase = /[A-Z]/;
+        const hasLowerCase = /[a-z]/;
+
+        return password.length >= minLenght && hasUpperCase.test(password) && hasLowerCase.test(password);
+    }
+
     const handleCreateUser = (e) => {
         e.preventDefault();
 
@@ -17,6 +25,11 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoUrl = form.photoUrl.value;
+
+        if(!isPasswordValid(password)){
+            toast.error("Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter.");
+            return;
+        }
 
         createUser(email, password)
             .then(() => {
