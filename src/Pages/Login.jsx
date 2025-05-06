@@ -4,7 +4,7 @@ import { AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
 
 const Login = () => {
-    const { login, setUser, setLoading } = useContext(AuthContext);
+    const { login, setUser, setLoading, GoogleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
@@ -16,23 +16,40 @@ const Login = () => {
         const password = form.password.value;
 
         login(email, password)
-        .then((result) => {
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                navigate(`${location.state ? location.state : "/dashboard"}`);
+                toast.success("Login Successfully");
+            })
+            .catch((error) => {
+                toast.error(error.message);
+                setLoading(false);
+            });
+    };
+
+    const handleGoogleSignIn = () => {
+        GoogleSignIn().then((result) => {
             const user = result.user;
             setUser(user);
-            navigate(`${location.state ? location.state : '/dashboard'}`)
-            toast.success("Login Successfully");
         })
-        .catch(error => {
-            toast.error(error.message)
+        .catch((error) => {
+            toast.error(error.message);
             setLoading(false);
         })
+
     };
 
     return (
         <div className="">
+            <title>SubCloud || Login</title>
             <div className="w-full max-w-md mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
-                <form onSubmit={handleLogin} noValidate="" action="" className="space-y-6">
+                <form
+                    onSubmit={handleLogin}
+                    noValidate=""
+                    action=""
+                    className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label
                             htmlFor="email"
@@ -79,6 +96,7 @@ const Login = () => {
                 </div>
                 <div className="flex justify-center space-x-4">
                     <button
+                        onClick={handleGoogleSignIn}
                         aria-label="Log in with Google"
                         className="p-3 rounded-sm">
                         <svg

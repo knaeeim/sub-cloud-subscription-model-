@@ -3,9 +3,14 @@ import { Link, NavLink } from "react-router";
 import logo from "../assets/SubCloud.png";
 import { AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
+import Loading from "./Loading";
 
 const Navbar = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user, logout, loading } = useContext(AuthContext);
+
+    if(loading){
+        return <Loading></Loading>;
+    }
 
     const handleLogout = () => {
         logout()

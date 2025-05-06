@@ -1,22 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import Loading from "../Components/Loading";
 import ProductCard from "../Components/ProductCard";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate, useLoaderData, useNavigate } from "react-router";
+import DashBoardCard from "../Components/DashBoardCard";
 
 const DashBoard = () => {
     const { loading, user, subscribed } = useContext(AuthContext);
     // console.log(product, category_id, months);
-    console.log(subscribed);
+    // console.log(subscribed);
     const navigate = useNavigate();
+    const data = useLoaderData();
+
+    useEffect(() => {
+        document.title = "SubCloud || DashBoard";
+    });
 
     if (loading) {
         return <Loading></Loading>;
     }
 
     const handleEditPage = () => {
-        navigate('/edit_user_details')
-    }
+        navigate("/edit_user_details");
+    };
 
     return (
         <div>
@@ -39,18 +45,22 @@ const DashBoard = () => {
                         </div>
                     </div>
                     <div className="px-6 py-4">
-                        <button onClick={handleEditPage} className="btn bg-[#4E8098] text-white">Edit Profile</button>
+                        <button
+                            onClick={handleEditPage}
+                            className="btn bg-[#4E8098] text-white">
+                            Edit Profile
+                        </button>
                     </div>
                     <div className="px-6 py-8 border-t flex justify-center items-center min-h-[calc(100vh-600px)]">
                         {subscribed && subscribed.length > 0 ? (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {subscribed.map((sub) => (
-                                    <ProductCard
+                                    <DashBoardCard
                                         key={sub.product.id}
                                         product={sub.product}
                                         cat_id={sub.cat_id}
-                                        months={sub.months}>
-                                    </ProductCard>
+                                        months={sub.months}
+                                        fullData={data}></DashBoardCard>
                                 ))}
                             </div>
                         ) : (

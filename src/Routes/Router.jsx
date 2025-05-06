@@ -25,6 +25,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/dashboard",
+                loader: () => fetch("/subscription.json"),
+                hydrateFallbackElement: <Loading></Loading>,
                 element: <PrivateRoutes>
                     <DashBoard></DashBoard>
                 </PrivateRoutes>,

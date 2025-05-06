@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import Loading from './Loading';
 import Banner from './Banner';
@@ -7,6 +7,10 @@ import PopulerProducts from './PopulerProducts';
 
 const Home = () => {
     const { loading } = useContext(AuthContext);
+
+    useEffect(() => {
+        document.title = 'SubCloud || Home';
+    })
 
     if(loading){
         return <Loading></Loading>

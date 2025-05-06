@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, setUser, updateUserProfile, GoogleSignIn, setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleCreateUser = (e) => {
         e.preventDefault();
@@ -45,8 +47,22 @@ const Register = () => {
             });
     };
 
+    const handleGoogleSignIn = () => {
+        GoogleSignIn()
+        .then((result) => {
+            const user = result.user;
+            setUser(user);
+            navigate("/dashboard");
+        })
+        .catch((error) => {
+            toast.error(error.message);
+            setLoading(false);
+        })
+    }
+
     return (
         <div>
+            <title>SubCloud || React</title>
             <div className="w-full min-w-2xl mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form
@@ -105,19 +121,22 @@ const Register = () => {
                                     className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                                 />
                             </div>
-                            <div className="space-y-1 text-sm">
+                            <div className="space-y-1 text-sm relative">
                                 <label
                                     htmlFor="password"
                                     className="block dark:text-gray-600">
                                     Password
                                 </label>
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     id="password"
                                     placeholder="Password"
                                     className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                                 />
+                                {
+                                    showPassword ? (<FaEyeSlash className="absolute top-10 right-2" onClick={()=>setShowPassword(prev => !prev)}/>) : (<FaEye className="absolute top-10 right-2" onClick={()=>setShowPassword(prev => !prev)}/>)
+                                }
                                 <div className="flex justify-end text-xs dark:text-gray-600">
                                     <a rel="noopener noreferrer" href="#">
                                         Forgot Password?
@@ -140,6 +159,7 @@ const Register = () => {
                 </div>
                 <div className="flex justify-center space-x-4">
                     <button
+                        onClick={handleGoogleSignIn}
                         aria-label="Log in with Google"
                         className="p-3 rounded-sm">
                         <svg

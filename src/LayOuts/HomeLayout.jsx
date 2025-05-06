@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
 const HomeLayout = () => {
+    useEffect(() => {
+        document.title = 'SubCloud || Home';
+    })
     return (
         <div className=''>
             <Navbar></Navbar>

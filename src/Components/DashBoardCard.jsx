@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLoaderData, useNavigate } from "react-router";
+import React from "react";
 
-const ProductCard = ({ product, cat_id }) => {
-    const navigate = useNavigate();
-    const data = useLoaderData();
-    const [findCat, setFindCat] = useState({});
-
-    useEffect(() => {
-        const findCategory = data?.find((cat) => cat.category_id === parseInt(cat_id));
-        console.log(findCategory);
-        setFindCat(findCategory);
-    },[data, cat_id])
-    
-    console.log(findCat);
-
-    const handleSubsPage = () => {
-        navigate(`/subscription/${cat_id}/${product.id}`);
-    };
-    // console.log(months);
+const DashBoardCard = ({ product, cat_id, months, fullData }) => {
+    const category = fullData.find(
+        (category) => category.category_id === parseInt(cat_id)
+    );
     return (
-        <div className="">
-            <title>SubCloud || {product.name}</title>
+        <div>
             <div className="card bg-base-100 shadow-sm relative">
+                {months && (
+                    <div className="badge badge-secondary absolute -top-4 left-0 z-20 text-white">
+                        {months} Months Subscription
+                    </div>
+                )}
                 <figure>
                     <img src={product.banner} alt="Shoes" />
                 </figure>
                 <div className="card-body">
                     <div>
                         <button className="btn btn-xs bg-[#0B5351] text-white">
-                            {findCat?.category_name}
+                            {category?.category_name}
                         </button>
                     </div>
                     <h2 className="card-title">{product.name}</h2>
@@ -56,13 +46,6 @@ const ProductCard = ({ product, cat_id }) => {
                                 ({product.number_of_reviews})
                             </span>
                         </div>
-                        <div>
-                            <button
-                                onClick={handleSubsPage}
-                                className="btn bg-[#4E8098] text-white">
-                                Buy Now
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -70,4 +53,4 @@ const ProductCard = ({ product, cat_id }) => {
     );
 };
 
-export default ProductCard;
+export default DashBoardCard;
