@@ -28,7 +28,8 @@
                     "Monthly meditation invite"
                 ],
                 "ratings": 4.7,
-                "number_of_reviews": 198
+                "number_of_reviews": 198, 
+                "is_popular": true
             },
             {
                 "id": 4,
@@ -52,7 +53,8 @@
                     "Exclusive Q&A with Zen coaches"
                 ],
                 "ratings": 4.8,
-                "number_of_reviews": 180
+                "number_of_reviews": 180,
+                "is_popular": true
             },
             {
                 "id": 2,
@@ -76,7 +78,8 @@
                     "Bonus journaling prompts"
                 ],
                 "ratings": 4.9,
-                "number_of_reviews": 225
+                "number_of_reviews": 225,
+                "is_popular": true
             }
         ]
     },
@@ -108,7 +111,8 @@
                     "Priority product testing"
                 ],
                 "ratings": 4.6,
-                "number_of_reviews": 140
+                "number_of_reviews": 140,
+                "is_popular": true
             },
             {
                 "id": 6,
@@ -132,7 +136,8 @@
                     "Candle care tips"
                 ],
                 "ratings": 4.9,
-                "number_of_reviews": 310
+                "number_of_reviews": 310,
+                "is_popular": true
             },
             {
                 "id": 5,
@@ -156,7 +161,8 @@
                     "Free monthly dosha quiz"
                 ],
                 "ratings": 4.5,
-                "number_of_reviews": 105
+                "number_of_reviews": 105,
+                "is_popular": false
             }
         ]
     },
@@ -188,7 +194,8 @@
                     "Nutritional tips"
                 ],
                 "ratings": 4.4,
-                "number_of_reviews": 121
+                "number_of_reviews": 121,
+                "is_popular": true
             },
             {
                 "id": 12,
@@ -212,7 +219,8 @@
                     "10% off next plant box"
                 ],
                 "ratings": 4.7,
-                "number_of_reviews": 160
+                "number_of_reviews": 160,
+                "is_popular": false
             },
             {
                 "id": 11,
@@ -236,7 +244,8 @@
                     "Asana poster"
                 ],
                 "ratings": 4.8,
-                "number_of_reviews": 178
+                "number_of_reviews": 178,
+                "is_popular": true
             }
         ]
     },
@@ -268,7 +277,8 @@
                     "Extra herbal tea sachets"
                 ],
                 "ratings": 4.6,
-                "number_of_reviews": 165
+                "number_of_reviews": 165,
+                "is_popular": false
             },
             {
                 "id": 10,
@@ -292,7 +302,8 @@
                     "Bonus love candle"
                 ],
                 "ratings": 4.9,
-                "number_of_reviews": 230
+                "number_of_reviews": 230,
+                "is_popular": true
             },
             {
                 "id": 8,
@@ -316,7 +327,8 @@
                     "Mystery crystal gift"
                 ],
                 "ratings": 4.7,
-                "number_of_reviews": 192
+                "number_of_reviews": 192,
+                "is_popular": false
             }
         ]
     }

@@ -7,50 +7,69 @@ import Register from "../Pages/Register";
 import Loading from "../Components/Loading";
 import CategoryDetails from "../Components/CategoryDetails";
 import Subscription from "../Components/Subscription";
-
+import PrivateRoutes from "../Provider/PrivateRoutes";
+import AuthRedirectRoute from "../Provider/AuthRedirectRoute";
+import DashBoard from "../Pages/DashBoard";
+import EditUser from "../Components/EditUser";
 
 export const router = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <HomeLayout></HomeLayout>,
         children: [
             {
                 index: true,
                 element: <Home></Home>,
-                loader: () => fetch('/subscription.json'),
-                hydrateFallbackElement: <Loading></Loading>
+                loader: () => fetch("/subscription.json"),
+                hydrateFallbackElement: <Loading></Loading>,
             },
             {
-                path: '/dashboard',
-                element: <h1>Welcome to Dashboard</h1>
+                path: "/dashboard",
+                element: <PrivateRoutes>
+                    <DashBoard></DashBoard>
+                </PrivateRoutes>,
             },
             {
-                path: 'category/:id',
+                path: "category/:id",
                 element: <CategoryDetails></CategoryDetails>,
-                loader: () => fetch('/subscription.json'),
-                hydrateFallbackElement: <Loading></Loading>
-            }, 
+                loader: () => fetch("/subscription.json"),
+                hydrateFallbackElement: <Loading></Loading>,
+            },
             {
-                path: 'subscription/:id',
-                element: <Subscription></Subscription>,
-                loader: () => fetch('/subscription.json'),
-                hydrateFallbackElement: <Loading></Loading>
+                path: "subscription/:cat_id/:product_id",
+                element: (
+                    <PrivateRoutes>
+                        <Subscription></Subscription>
+                    </PrivateRoutes>
+                ),
+                loader: () => fetch("/subscription.json"),
+                hydrateFallbackElement: <Loading></Loading>,
+            },
+            {
+                path: "/edit_user_details",
+                element: <PrivateRoutes>
+                    <EditUser></EditUser>
+                </PrivateRoutes>
             }
-        ]
+        ],
     },
 
     {
-        path: '/auth',
+        path: "/auth",
         element: <AuthLayOut></AuthLayOut>,
         children: [
             {
                 path: "/auth/login",
-                element: <Login></Login>
+                element: <AuthRedirectRoute>
+                    <Login></Login>
+                </AuthRedirectRoute>,
             },
             {
                 path: "/auth/register",
-                element: <Register></Register>
-            }
-        ]
-    }
-])
+                element: <AuthRedirectRoute>
+                    <Register></Register>
+                </AuthRedirectRoute>,
+            },
+        ],
+    },
+]);

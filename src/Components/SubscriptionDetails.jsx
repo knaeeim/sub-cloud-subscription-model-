@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { useNavigate } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
 
-const SubscriptionDetails = ({ product }) => {
-    
+const SubscriptionDetails = ({ product, cat_id }) => {
+    const { setSubscribed, subscribed } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSubscription = (months) => {
+        const isexist = subscribed?.find(prd => prd?.product?.id === product.id)
+        // console.log(isexist);
+        if(isexist){
+            toast.error("You have already subscribed to this plan!")
+            return
+        }
+        setSubscribed(prev => ([...prev, {product, months, cat_id}]))
         toast.success(
             `You have successfully subscribed to the ${months} months plan!`
         );

@@ -21,24 +21,24 @@ const Register = () => {
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
-                setUser(user);
-
+                
                 const userInfo = {
                     displayName: name,
                     photoURL: photoUrl,
                 };
-
+                
                 // Update user profile
                 updateUserProfile(userInfo)
-                    .then(() => {
+                .then(() => {
+                        setUser({...user, displayName: name, photoURL: photoUrl});
+                        toast.success("User Created Successfully");
                         toast.success("User Profile Updated");
+                        navigate("/dashboard");
                     })
                     .catch((error) => {
                         toast.error(error.message);
                     });
 
-                navigate("/dashboard");
-                toast.success("User Created Successfully");
             })
             .then((error) => {
                 console.log(error);

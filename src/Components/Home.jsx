@@ -3,6 +3,7 @@ import { AuthContext } from '../Context/AuthContext';
 import Loading from './Loading';
 import Banner from './Banner';
 import Categories from './Categories';
+import PopulerProducts from './PopulerProducts';
 
 const Home = () => {
     const { loading } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Categories></Categories>
+            <PopulerProducts></PopulerProducts>
         </div>
     );
 };

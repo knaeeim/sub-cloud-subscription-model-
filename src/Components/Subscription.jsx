@@ -4,18 +4,19 @@ import SubscriptionDetails from "./SubscriptionDetails";
 
 const Subscription = () => {
     const location = useLocation();
-    const { category_id } = location.state;
+    console.log(location);
+
     const subscriptionData = useLoaderData();
-    const { id } = useParams();
+    const { product_id, cat_id } = useParams();
     const subscription = subscriptionData.find(
-        (subscription) => subscription.category_id == category_id
+        (subscription) => subscription.category_id == cat_id
     );
     const data = subscription.products.find(
-        (product) => product.id === parseInt(id)
+        (product) => product.id === parseInt(product_id)
     );
     return (
         <div className="">
-            <SubscriptionDetails product={data}></SubscriptionDetails>
+            <SubscriptionDetails product={data} cat_id={cat_id}></SubscriptionDetails>
         </div>
     );
 };

@@ -9,13 +9,11 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logout()
-        .then(()=> {
-
-        })
-        .catch(error => {
-            toast.error(error.message);
-        })
-    }
+            .then(() => {})
+            .catch((error) => {
+                toast.error(error.message);
+            });
+    };
 
     const links = (
         <>
@@ -28,15 +26,17 @@ const Navbar = () => {
                 to="/">
                 <li>Home</li>
             </NavLink>
-            <NavLink
-                className={({ isActive }) =>
-                    isActive
-                        ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
-                        : "mx-3 px-3 py-2"
-                }
-                to="/dashboard">
-                <li>My Profile</li>
-            </NavLink>
+            {user && (
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive
+                            ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
+                            : "mx-3 px-3 py-2"
+                    }
+                    to="/dashboard">
+                    <li>My Profile</li>
+                </NavLink>
+            )}
         </>
     );
     return (
@@ -66,8 +66,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex justify-center items-center gap-2">
-                    <img className="w-10 h-10" src={logo} alt="" />
-                    <a className="text-2xl font-bold">SubCloud</a>
+                    <img className="w-14 h-14" src={logo} alt="" />
+                    <div className="flex flex-col">
+                        <a className="text-2xl font-bold">SubCloud</a>
+                        <small className="text-[14px]">
+                            Buy your suitable one
+                        </small>
+                    </div>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -76,14 +81,17 @@ const Navbar = () => {
             <div className="navbar-end flex items-center gap-4">
                 {user && (
                     <div className="avatar">
-                        <div className={`ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2`} title={user ? user.displayName : "User Name Nai.."}>
-                            <img src={user.photoURL}/>
+                        <div
+                            className={`ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2`}
+                            title={user ? user.displayName : "User Name Nai.."}>
+                            <img src={user.photoURL} />
                         </div>
                     </div>
                 )}
                 {user ? (
                     <>
-                        <Link onClick={handleLogout}
+                        <Link
+                            onClick={handleLogout}
                             to="/auth/login"
                             className="btn bg-[#4E8098] text-white">
                             Log Out

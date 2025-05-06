@@ -4,7 +4,7 @@ import Category from "./Category";
 
 const Categories = () => {
     const data = useLoaderData();
-    console.log(data[0].category_name);
+    // console.log(data[0].category_name);
     return (
         <div className="py-20">
             <h1 className="text-3xl text-center font-bold mb-10">Browse Our <span className="text-[#092327]">Products</span> by Category.. <br /> and Buy a Suitable Subscription for you...</h1>
@@ -12,7 +12,7 @@ const Categories = () => {
                 {data.map((category) => {
                     return (
                         <Category
-                            key={category.id}
+                            key={category.category_id}
                             category={category}></Category>
                     );
                 })}

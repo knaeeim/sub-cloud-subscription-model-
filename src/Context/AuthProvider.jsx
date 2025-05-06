@@ -7,6 +7,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [subscribed, setSubscribed] = useState([]);
 
     console.log(user?.displayName);
 
@@ -47,6 +48,8 @@ const AuthProvider = ({ children }) => {
         logout,
         login,
         updateUserProfile,
+        subscribed,
+        setSubscribed,
     }
 
     return (

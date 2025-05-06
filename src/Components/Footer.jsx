@@ -6,17 +6,16 @@ const Footer = () => {
     return (
         <footer className="px-4 divide-y dark:bg-gray-100 dark:text-gray-800">
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-                <div className="lg:w-2/4">
-                    <a
-                        rel="noopener noreferrer"
-                        className="flex justify-center space-x-3 lg:justify-start">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full">
-                            <img src={logo} alt="" />
+                <div className="lg:w-2/4 sm:ml-10">
+                    <div className="flex justify-start items-center gap-2">
+                        <img className="w-14 h-14" src={logo} alt="" />
+                        <div className="flex flex-col">
+                            <a className="text-2xl font-bold">SubCloud</a>
+                            <small className="text-[14px]">
+                                Buy your suitable one
+                            </small>
                         </div>
-                        <span className="self-center text-2xl font-semibold">
-                            Sub Cloud
-                        </span>
-                    </a>
+                    </div>
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-6 gap-y-8 lg:w-3/4 sm:grid-cols-3">
                     <div className="space-y-3 text-center">
@@ -25,22 +24,34 @@ const Footer = () => {
                         </h3>
                         <ul className="space-y-1">
                             <li>
-                                <Link to='category/101' rel="noopener noreferrer" href="#">
+                                <Link
+                                    to="category/101"
+                                    rel="noopener noreferrer"
+                                    href="#">
                                     Mindfulness & Meditation
                                 </Link>
                             </li>
                             <li>
-                                <Link to='category/102' rel="noopener noreferrer" href="#">
+                                <Link
+                                    to="category/102"
+                                    rel="noopener noreferrer"
+                                    href="#">
                                     Skincare & Beauty
                                 </Link>
                             </li>
                             <li>
-                                <Link to='category/103' rel="noopener noreferrer" href="#">
+                                <Link
+                                    to="category/103"
+                                    rel="noopener noreferrer"
+                                    href="#">
                                     Nutrition & Detox
                                 </Link>
                             </li>
                             <li>
-                                <Link to='category/104' rel="noopener noreferrer" href="#">
+                                <Link
+                                    to="category/104"
+                                    rel="noopener noreferrer"
+                                    href="#">
                                     Self-Care & Lifestyle
                                 </Link>
                             </li>
@@ -64,9 +75,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="space-y-3 sm:col-span-1 col-span-2 sm:order-none order-last mx-auto text-center">
-                        <div className="uppercase font-bold">
-                            Social media
-                        </div>
+                        <div className="uppercase font-bold">Social media</div>
                         <div className="flex justify-start space-x-3">
                             <a
                                 rel="noopener noreferrer"
