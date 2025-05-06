@@ -21,7 +21,7 @@ const SubscriptionDetails = ({ product, cat_id }) => {
         const isexist = subscribed?.find(
             (prd) => prd?.product?.id === product.id
         );
-        // console.log(isexist);
+
         if (isexist) {
             toast.error("You have already subscribed to this plan!");
             return;

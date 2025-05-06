@@ -7,8 +7,7 @@ import DashBoardCard from "../Components/DashBoardCard";
 
 const DashBoard = () => {
     const { loading, user, subscribed } = useContext(AuthContext);
-    // console.log(product, category_id, months);
-    // console.log(subscribed);
+
     const navigate = useNavigate();
     const data = useLoaderData();
 

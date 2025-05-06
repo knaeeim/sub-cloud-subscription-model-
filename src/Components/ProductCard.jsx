@@ -8,16 +8,14 @@ const ProductCard = ({ product, cat_id }) => {
 
     useEffect(() => {
         const findCategory = data?.find((cat) => cat.category_id === parseInt(cat_id));
-        // console.log(findCategory);
         setFindCat(findCategory);
     },[data, cat_id])
     
-    console.log(findCat);
 
     const handleSubsPage = () => {
         navigate(`/subscription/${cat_id}/${product.id}`);
     };
-    // console.log(months);
+    
     return (
         <div className="">
             <title>SubCloud || {product.name}</title>

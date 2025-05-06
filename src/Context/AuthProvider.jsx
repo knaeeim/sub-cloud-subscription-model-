@@ -10,7 +10,6 @@ const AuthProvider = ({ children }) => {
     const [subscribed, setSubscribed] = useState([]);
     const provider = new GoogleAuthProvider();
 
-    console.log(user);
 
     const createUser = (email, password) => {
         setLoading(true);

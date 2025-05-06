@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router";
 
 const Category = ({ category }) => {
-    // console.log(category);
     return (
         <div>
             <div className="card bg-base-200 shadow-sm">

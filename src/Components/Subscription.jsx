@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
-import { useLoaderData, useLocation, useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import SubscriptionDetails from "./SubscriptionDetails";
 
 const Subscription = () => {
-    const location = useLocation();
-    console.log(location);
+    const subscriptionData = useLoaderData();
+    const { product_id, cat_id } = useParams();
 
     useEffect(() => {
         document.title = 'SubCloud || Pricing';
     })
 
-    const subscriptionData = useLoaderData();
-    const { product_id, cat_id } = useParams();
     const subscription = subscriptionData.find(
         (subscription) => subscription.category_id == cat_id
     );
