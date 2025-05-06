@@ -12,6 +12,7 @@ import AuthRedirectRoute from "../Provider/AuthRedirectRoute";
 import DashBoard from "../Pages/DashBoard";
 import EditUser from "../Components/EditUser";
 import ErrorPage from "../Pages/ErrorPage";
+import SubscriberCircle from "../Pages/SubscriberCircle";
 
 export const router = createBrowserRouter([
     {
@@ -53,6 +54,14 @@ export const router = createBrowserRouter([
                 path: "/edit_user_details",
                 element: <PrivateRoutes>
                     <EditUser></EditUser>
+                </PrivateRoutes>
+            }, 
+            {
+                path: "/subscriber/circle",
+                loader: () => fetch('/blog.json'),
+                hydrateFallbackElement: <Loading></Loading>,
+                element: <PrivateRoutes>
+                    <SubscriberCircle></SubscriberCircle>
                 </PrivateRoutes>
             }
         ],

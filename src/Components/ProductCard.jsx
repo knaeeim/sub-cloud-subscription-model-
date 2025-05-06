@@ -8,7 +8,7 @@ const ProductCard = ({ product, cat_id }) => {
 
     useEffect(() => {
         const findCategory = data?.find((cat) => cat.category_id === parseInt(cat_id));
-        console.log(findCategory);
+        // console.log(findCategory);
         setFindCat(findCategory);
     },[data, cat_id])
     

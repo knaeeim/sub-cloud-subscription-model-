@@ -42,6 +42,17 @@ const Navbar = () => {
                     <li>My Profile</li>
                 </NavLink>
             )}
+            {user && (
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive
+                            ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
+                            : "mx-3 px-3 py-2"
+                    }
+                    to="/subscriber/circle">
+                    <li>Subscriber Circle</li>
+                </NavLink>
+            )}
         </>
     );
     return (
