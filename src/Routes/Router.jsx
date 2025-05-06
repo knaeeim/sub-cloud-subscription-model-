@@ -11,11 +11,13 @@ import PrivateRoutes from "../Provider/PrivateRoutes";
 import AuthRedirectRoute from "../Provider/AuthRedirectRoute";
 import DashBoard from "../Pages/DashBoard";
 import EditUser from "../Components/EditUser";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <HomeLayout></HomeLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 index: true,
@@ -74,4 +76,8 @@ export const router = createBrowserRouter([
             },
         ],
     },
+    {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
+    }
 ]);
