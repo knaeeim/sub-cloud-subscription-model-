@@ -15,7 +15,7 @@ const SubscriptionDetails = ({ product, cat_id }) => {
     useEffect(() => {
         window.scrollTo({top: 0, behavior: 'smooth'});
         document.title = "SubCloud || Subscription Details";
-    })
+    }, []);
 
     const handleSubscription = (months) => {
         const isexist = subscribed?.find(
