@@ -34,13 +34,13 @@ const ProductCard = ({ product, cat_id }) => {
                     <h2 className="card-title">{product.name}</h2>
                     <div>
                         <p className="text-[#00A9A5] font-bold text-md">
-                            3 months Plan: ${product.price["3_months"]}
+                            3 Months Plan: ${product.price["3_months"]}
                         </p>
                         <p className="text-[#00A9A5] font-bold text-md">
                             6 Months Plan: ${product.price["6_months"]}
                         </p>
                         <p className="text-[#00A9A5] font-bold text-md">
-                            12 Months Plan : ${product.price["12_months"]}
+                            12 Months Plan: ${product.price["12_months"]}
                         </p>
                     </div>
                     <div className="card-actions justify-between items-center">
@@ -60,7 +60,7 @@ const ProductCard = ({ product, cat_id }) => {
                             <button
                                 onClick={handleSubsPage}
                                 className="btn bg-[#4E8098] text-white">
-                                Buy Now
+                                More Details
                             </button>
                         </div>
                     </div>

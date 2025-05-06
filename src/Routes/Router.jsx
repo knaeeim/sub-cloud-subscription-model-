@@ -8,7 +8,6 @@ import Loading from "../Components/Loading";
 import CategoryDetails from "../Components/CategoryDetails";
 import Subscription from "../Components/Subscription";
 import PrivateRoutes from "../Provider/PrivateRoutes";
-import AuthRedirectRoute from "../Provider/AuthRedirectRoute";
 import DashBoard from "../Pages/DashBoard";
 import EditUser from "../Components/EditUser";
 import ErrorPage from "../Pages/ErrorPage";
@@ -73,15 +72,11 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/auth/login",
-                element: <AuthRedirectRoute>
-                    <Login></Login>
-                </AuthRedirectRoute>,
+                element: <Login></Login>,
             },
             {
                 path: "/auth/register",
-                element: <AuthRedirectRoute>
-                    <Register></Register>
-                </AuthRedirectRoute>,
+                element: <Register></Register>,
             },
         ],
     },

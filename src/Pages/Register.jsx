@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser, setUser, updateUserProfile, GoogleSignIn, setLoading } = useContext(AuthContext);
+    const { createUser, setUser, updateUserProfile, GoogleSignIn, setLoading, user } = useContext(AuthContext);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
@@ -13,37 +13,28 @@ const Register = () => {
         e.preventDefault();
 
         const form = e.target;
-        console.log(form);
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         const photoUrl = form.photoUrl.value;
 
-        console.log(createUser);
         createUser(email, password)
-            .then((result) => {
-                const user = result.user;
-                
+            .then(() => {
+                // const userDetails = result.user;
                 const userInfo = {
                     displayName: name,
                     photoURL: photoUrl,
                 };
-                
+                setUser({...user, displayName: name, photoURL: photoUrl});
                 // Update user profile
                 updateUserProfile(userInfo)
-                .then(() => {
-                        setUser({...user, displayName: name, photoURL: photoUrl});
-                        toast.success("User Created Successfully");
-                        toast.success("User Profile Updated");
-                        navigate("/dashboard");
-                    })
-                    .catch((error) => {
-                        toast.error(error.message);
-                    });
-
+                setLoading(false);
+                toast.success("User Created Successfully");
+                navigate("/dashboard");
             })
-            .then((error) => {
-                console.log(error);
+            .catch((error) => {
+                toast.error(error.message);
+                setLoading(false);
             });
     };
 

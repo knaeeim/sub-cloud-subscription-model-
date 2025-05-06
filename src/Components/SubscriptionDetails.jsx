@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
@@ -7,21 +7,35 @@ import { AuthContext } from "../Context/AuthContext";
 
 const SubscriptionDetails = ({ product, cat_id }) => {
     const { setSubscribed, subscribed } = useContext(AuthContext);
+    const [review, setReview] = useState('');
+    const [rating, setRating] = useState(0);
+    const [FullReview, setFullReview] = useState([]);
     const navigate = useNavigate();
 
     const handleSubscription = (months) => {
-        const isexist = subscribed?.find(prd => prd?.product?.id === product.id)
+        const isexist = subscribed?.find(
+            (prd) => prd?.product?.id === product.id
+        );
         // console.log(isexist);
-        if(isexist){
-            toast.error("You have already subscribed to this plan!")
-            return
+        if (isexist) {
+            toast.error("You have already subscribed to this plan!");
+            return;
         }
-        setSubscribed(prev => ([...prev, {product, months, cat_id}]))
+        setSubscribed((prev) => [...prev, { product, months, cat_id }]);
         toast.success(
             `You have successfully subscribed to the ${months} months plan!`
         );
-        navigate("/dashboard")
-    }
+        navigate("/dashboard");
+    };
+
+    const handleReview = (e) => {
+        e.preventDefault();
+        const reviewData = {
+            review,
+            rating
+        }
+        setFullReview((prev) => [...prev, reviewData]);
+    };
 
     return (
         <div>
@@ -89,10 +103,10 @@ const SubscriptionDetails = ({ product, cat_id }) => {
                                     )}
                                 </ul>
                                 <button
-                                    onClick={()=> handleSubscription("3")}
+                                    onClick={() => handleSubscription("3")}
                                     type="button"
                                     className="inline-block px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-violet-600 dark:text-gray-50">
-                                    Get Started
+                                    Buy Now..
                                 </button>
                             </div>
                         </div>
@@ -143,11 +157,11 @@ const SubscriptionDetails = ({ product, cat_id }) => {
                                     )}
                                 </ul>
                                 <button
-                                    onClick={()=> handleSubscription("6")}
+                                    onClick={() => handleSubscription("6")}
                                     rel="noopener noreferrer"
                                     href="#"
                                     className="inline-block w-full px-5 py-3 font-bold tracking-wider text-center rounded dark:bg-gray-100 dark:text-violet-600">
-                                    Get Started
+                                    Buy Now..
                                 </button>
                             </div>
                         </div>
@@ -198,14 +212,84 @@ const SubscriptionDetails = ({ product, cat_id }) => {
                                     )}
                                 </ul>
                                 <button
-                                    onClick={()=> handleSubscription("12")}
+                                    onClick={() => handleSubscription("12")}
                                     rel="noopener noreferrer"
                                     href="#"
                                     className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-violet-600 dark:text-gray-50">
-                                    Get Started
+                                    Buy Now..
                                 </button>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* input field for review */}
+                <div className="w-full max-w-3xl mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100 mt-10">
+                    <h1 className="text-2xl font-bold text-center">Submit Your Review Here..</h1>
+                    <form
+                        onSubmit={handleReview}
+                        noValidate=""
+                        action=""
+                        className="space-y-6">
+                        <div className="space-y-1 text-sm">
+                            <label
+                                htmlFor="email"
+                                className="block dark:text-gray-600">
+                                Write Your Review Here...
+                            </label>
+                            <input
+                                onChange={(e) => setReview(e.target.value)}
+                                value={review}
+                                type="text"
+                                name="text"
+                                id="text"
+                                placeholder="Write Your Review Here"
+                                className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                            />
+                        </div>
+                        <div className="space-y-1 text-sm">
+                            <label
+                                htmlFor="rating"
+                                className="block dark:text-gray-600">
+                                Rating
+                            </label>
+                            <select
+                                defaultValue="Choose your rating"
+                                onChange={(e) => setRating(e.target.value)}
+                                className="select w-full rounded-md">
+                                <option disabled={true}>Choose Your Rating</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">
+                            Submit Review
+                        </button>
+                    </form>
+                </div>
+
+                <div className="mt-10">
+                    <h1 className="text-2xl font-bold text-center">Customer Reviews...</h1>
+                    <div>
+                        {
+                            FullReview && FullReview.length > 0 ? (
+                                FullReview.map((review) => {
+                                    return (
+                                        <div className="w-full max-w-3xl mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100 mt-10">
+                                            <h1 className="text-xl font-bold text-center">{review.review}</h1>
+                                            <p className="text-center">Rating: {review.rating}</p>
+                                        </div>
+                                    )
+                                })
+                            ) : (
+                                <h1 className="text-center text-[#4E8098] text-3xl mt-10">
+                                    No Reviews Yet..
+                                </h1>
+                            )
+                        }
                     </div>
                 </div>
             </section>
