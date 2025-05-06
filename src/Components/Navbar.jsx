@@ -57,7 +57,7 @@ const Navbar = () => {
     );
     return (
         <div className="navbar bg-base-200 shadow-sm lg:px-16 md:px-10">
-            <div className="navbar-start">
+            <div className="navbar-start flex gap-2">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="lg:hidden">
                         <svg
@@ -82,10 +82,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex justify-center items-center gap-2">
-                    <img className="w-14 h-14" src={logo} alt="" />
-                    <div className="flex flex-col">
-                        <a className="text-2xl font-bold">SubCloud</a>
-                        <small className="text-[14px]">
+                    <img className="md:w-12 md:h-12 w-8 h-8" src={logo} alt="" />
+                    <div className="md:flex flex-col hidden">
+                        <a className="md:text-2xl text-lg font-bold">SubCloud</a>
+                        <small className="md:text-[14px] text-[10px]">
                             Buy your suitable one
                         </small>
                     </div>
@@ -116,10 +116,10 @@ const Navbar = () => {
                     <>
                         <Link
                             to="/auth/login"
-                            className="btn bg-[#4E8098] text-white">
+                            className="btn bg-[#4E8098] btn-sm md:btn-md text-white">
                             Log In
                         </Link>
-                        <Link to="/auth/register" className="btn bg-[#90C2E7]">
+                        <Link to="/auth/register" className="btn btn-sm md:btn-md bg-[#90C2E7]">
                             Register
                         </Link>
                     </>

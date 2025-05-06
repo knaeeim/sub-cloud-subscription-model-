@@ -12,6 +12,14 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    const isPasswordValid = (password) => {
+        const minLenght = 6; 
+        const hasUpperCase = /[A-Z]/;
+        const hasLowerCase = /[a-z]/;
+
+        return password.length >= minLenght && hasUpperCase.test(password) && hasLowerCase.test(password);
+    }
+
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -19,6 +27,11 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+
+        if(!isPasswordValid(password)){
+            toast.error("Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter.");
+            return;
+        }
 
         login(email, password)
             .then((result) => {
@@ -40,6 +53,7 @@ const Login = () => {
                 const user = result.user;
                 setLoading(false);
                 setUser(user);
+                navigate(`${location.state ? location.state : "/dashboard"}`);
             })
             .catch((error) => {
                 toast.error(error.message);
@@ -48,9 +62,9 @@ const Login = () => {
     };
 
     return (
-        <div className="">
+        <div className="w-full">
             <title>SubCloud || Login</title>
-            <div className="w-full max-w-md mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">
+            <div className="max-w-md mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form
                     onSubmit={handleLogin}

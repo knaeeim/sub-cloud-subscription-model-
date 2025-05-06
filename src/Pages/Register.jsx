@@ -65,16 +65,16 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className="w-full">
             <title>SubCloud || React</title>
-            <div className="w-full min-w-2xl mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100">
+            <div className="w-full md:min-w-2xl max-w-md mx-auto p-8 space-y-3 rounded-xl shadow-2xl bg-gray-100 mt-4">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form
                     onSubmit={handleCreateUser}
                     noValidate=""
                     action=""
                     className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-3">
                         {/* left side div */}
                         <div className="space-y-6">
                             {/* name */}
