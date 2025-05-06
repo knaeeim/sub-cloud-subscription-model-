@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
@@ -11,6 +11,11 @@ const SubscriptionDetails = ({ product, cat_id }) => {
     const [rating, setRating] = useState(0);
     const [FullReview, setFullReview] = useState([]);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.title = "SubCloud || Subscription Details";
+    })
 
     const handleSubscription = (months) => {
         const isexist = subscribed?.find(

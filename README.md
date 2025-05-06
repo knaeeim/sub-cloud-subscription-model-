@@ -1,10 +1,49 @@
-# SubCloud (is a Subscription selling website in a bundle)
+# SubCloud – Subscription Box Web App
 
-Sub Cloud is a Subscription selling based model where you can buy a subscription in bundle. 
+SubCloud is a responsive subscription-based web application built with React and Tailwind CSS. It provides a seamless user experience with authentication, secure routing, product discovery, and profile management features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 **Authentication**
+  - Email & Password Login/Register
+  - Google Sign-In
+  - Logout
+  - Show/Hide Password Toggle
+  - Forgot/Reset Password (Auto-filled email and Gmail redirect)
+
+- 🔄 **Protected Routes**
+  - `/profile` – View and update your name & photo URL, and manage subscribed products.
+  - `/subscriber-circle` – Learn how to use the products and explore all benefits.
+
+- 🧭 **Navigation**
+  - Navbar with logo and `NavLink` to:
+    - `Home`
+    - `My Profile` (Protected)
+    - `Subscriber Circle` (Protected)
+  - User avatar and logout button appear when logged in.
+
+- 🖼️ **Homepage Sections**
+  - **Banner**: Four beautiful carousels using `Swiper.js`
+  - **Category**: Browse by four categories (fetched from local JSON)
+  - **Popular Products**: Displayed from all four categories
+  - **Customer Count**: Animated premium user count using `react-countup`
+  - **Footer**: Clean and consistent across the site
+
+---
+
+## 📦 Tech Stack
+
+- **React** (v19.0.0)
+- **React DOM**
+- **React Router** (v7.5.3)
+- **Tailwind CSS** (v4.1.5)
+- **@tailwindcss/vite** (v4.1.5)
+- **Firebase** (v11.6.1)
+- **Swiper.js** (v11.2.6)
+- **React CountUp** (v6.5.3)
+- **React Hot Toast** (v2.5.2)
+- **React Icons** (v5.5.0)
+
+---
