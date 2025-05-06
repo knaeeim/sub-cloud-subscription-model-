@@ -7,7 +7,7 @@ const Login = () => {
     const { login, setUser, setLoading, GoogleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
+    console.log(location.state);
     const handleLogin = (e) => {
         e.preventDefault();
 
