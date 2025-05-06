@@ -8,10 +8,11 @@ const Login = () => {
     const { login, setUser, setLoading, GoogleSignIn } =
         useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const [email, setemail] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
 
-    console.log(location.state);
+    console.log(location);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -68,6 +69,8 @@ const Login = () => {
                             name="email"
                             id="email"
                             placeholder="Email"
+                            value={email}
+                            onChange={(e) => setemail(e.target.value)}
                             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                         />
                     </div>
@@ -96,9 +99,9 @@ const Login = () => {
                             />
                         )}
                         <div className="flex justify-end text-xs dark:text-gray-600">
-                            <a rel="noopener noreferrer" href="#">
+                            <Link to='/reset_password' state={email}>
                                 Forgot Password?
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">

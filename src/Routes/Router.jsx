@@ -12,6 +12,7 @@ import DashBoard from "../Pages/DashBoard";
 import EditUser from "../Components/EditUser";
 import ErrorPage from "../Pages/ErrorPage";
 import SubscriberCircle from "../Pages/SubscriberCircle";
+import ForgatePassword from "../Pages/ForgatePassword";
 
 export const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
                 element: <PrivateRoutes>
                     <SubscriberCircle></SubscriberCircle>
                 </PrivateRoutes>
+            },
+            {
+                path: "/reset_password",
+                element: <ForgatePassword></ForgatePassword>
             }
         ],
     },
