@@ -19,7 +19,7 @@ const PopulerProducts = () => {
 
     return (
         <div className="mt-10">
-            <h1 className="md:text-3xl text-lg text-center font-bold mb-5">Browse Our <span className="text-[#092327]"> Most Populer Products</span> from All Category.. <br /> and Buy a Suitable Subscription for you...</h1>
+            <h1 className="md:text-3xl text-lg text-center font-bold mb-5">Browse Our <span className="text-[#092327]"> Most Popular Products</span> from All Category.. <br /> and Buy a Suitable Subscription for you...</h1>
             <div>
                 <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-11/12 mx-auto">
                     {firstProducts.map((product) => (

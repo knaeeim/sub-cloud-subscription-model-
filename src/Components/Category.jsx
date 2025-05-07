@@ -14,7 +14,7 @@ const Category = ({ category }) => {
                 <div className="card-body">
                     <h2 className="card-title">{category.category_name}</h2>
                     <p>
-                        {category.category_description}
+                        {category.category_description.split("").slice(0, 70).join("")}...
                     </p>
                     <div className="card-actions justify-end">
                         <Link to={`/category/${category.category_id}`}><button className="btn bg-[#00A9A5] text-white">Browse</button></Link>
