@@ -8,7 +8,7 @@ import Loading from "./Loading";
 const Navbar = () => {
     const { user, logout, loading } = useContext(AuthContext);
 
-    if(loading){
+    if (loading) {
         return <Loading></Loading>;
     }
 
@@ -31,28 +31,24 @@ const Navbar = () => {
                 to="/">
                 <li>Home</li>
             </NavLink>
-            {user && (
-                <NavLink
-                    className={({ isActive }) =>
-                        isActive
-                            ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
-                            : "mx-3 px-3 py-2"
-                    }
-                    to="/dashboard">
-                    <li>My Profile</li>
-                </NavLink>
-            )}
-            {user && (
-                <NavLink
-                    className={({ isActive }) =>
-                        isActive
-                            ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
-                            : "mx-3 px-3 py-2"
-                    }
-                    to="/subscriber/circle">
-                    <li>Subscriber Circle</li>
-                </NavLink>
-            )}
+            <NavLink
+                className={({ isActive }) =>
+                    isActive
+                        ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
+                        : "mx-3 px-3 py-2"
+                }
+                to="/dashboard">
+                <li>My Profile</li>
+            </NavLink>
+            <NavLink
+                className={({ isActive }) =>
+                    isActive
+                        ? "bg-[#00A9A5] px-3 py-2 rounded-2xl mx-3 text-white"
+                        : "mx-3 px-3 py-2"
+                }
+                to="/subscriber/circle">
+                <li>Subscriber Circle</li>
+            </NavLink>
         </>
     );
     return (
@@ -82,9 +78,15 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex justify-center items-center gap-2">
-                    <img className="md:w-12 md:h-12 w-8 h-8" src={logo} alt="" />
+                    <img
+                        className="md:w-12 md:h-12 w-8 h-8"
+                        src={logo}
+                        alt=""
+                    />
                     <div className="md:flex flex-col hidden">
-                        <a className="md:text-2xl text-lg font-bold">SubCloud</a>
+                        <a className="md:text-2xl text-lg font-bold">
+                            SubCloud
+                        </a>
                         <small className="md:text-[14px] text-[10px]">
                             Buy your suitable one
                         </small>
@@ -99,7 +101,13 @@ const Navbar = () => {
                     <div className="avatar">
                         <div
                             className={`ring-primary ring-offset-base-100 md:w-8 w-6 rounded-full ring-2 ring-offset-2`}>
-                            <img src={user.photoURL} alt={user.displayName || "Not Found"} title={user ? user.displayName : "User Name Nai.."}/>
+                            <img
+                                src={user.photoURL}
+                                alt={user.displayName || "Not Found"}
+                                title={
+                                    user ? user.displayName : "User Name Nai.."
+                                }
+                            />
                         </div>
                     </div>
                 )}
@@ -119,7 +127,9 @@ const Navbar = () => {
                             className="btn bg-[#4E8098] btn-sm md:btn-md text-white">
                             Log In
                         </Link>
-                        <Link to="/auth/register" className="btn btn-sm md:btn-md bg-[#90C2E7]">
+                        <Link
+                            to="/auth/register"
+                            className="btn btn-sm md:btn-md bg-[#90C2E7]">
                             Register
                         </Link>
                     </>
