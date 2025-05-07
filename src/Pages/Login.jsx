@@ -8,16 +8,16 @@ const Login = () => {
     const { login, setUser, setLoading, GoogleSignIn } =
         useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
-    const [email, setemail] = useState("");
+    const [email, setEmail] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
 
     const isPasswordValid = (password) => {
-        const minLenght = 6; 
+        const minLength = 6; 
         const hasUpperCase = /[A-Z]/;
         const hasLowerCase = /[a-z]/;
 
-        return password.length >= minLenght && hasUpperCase.test(password) && hasLowerCase.test(password);
+        return password.length >= minLength && hasUpperCase.test(password) && hasLowerCase.test(password);
     }
 
 
@@ -83,7 +83,7 @@ const Login = () => {
                             id="email"
                             placeholder="Email"
                             value={email}
-                            onChange={(e) => setemail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                         />
