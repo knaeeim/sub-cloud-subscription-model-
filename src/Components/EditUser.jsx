@@ -43,7 +43,7 @@ const EditUser = () => {
                 toast.success("Profile updated successfully");
                 navigate("/dashboard");
             })
-            .catct((error) => {
+            .catch((error) => {
                 toast.error(error.message);
             });
     };
