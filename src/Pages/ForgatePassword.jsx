@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
@@ -6,14 +6,15 @@ import toast from "react-hot-toast";
 const ForgatePassword = () => {
     const { state } = useLocation();
     const { ResetMail } = useContext(AuthContext);
+    const [email, setEmail] = useState(state);
 
     useEffect(() => {
         document.title = "SubCloud || Reset Password";
     });
 
-    const handlResetPassword = (e) => {
+    const handleResetPassword = (e) => {
         e.preventDefault();
-        ResetMail(state)
+        ResetMail(email)
             .then(() => {
                 toast.success("Reset Password Email Sent Successfully");
                 window.location.href = "https://mail.google.com/";
@@ -30,7 +31,7 @@ const ForgatePassword = () => {
                     Reset Your Password
                 </h1>
                 <form
-                    onSubmit={handlResetPassword}
+                    onSubmit={handleResetPassword}
                     noValidate=""
                     action=""
                     className="space-y-6">
@@ -45,7 +46,8 @@ const ForgatePassword = () => {
                             name="email"
                             id="email"
                             placeholder="Email"
-                            value={state}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                         />
                     </div>
