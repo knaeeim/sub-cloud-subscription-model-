@@ -25,7 +25,7 @@ const Footer = () => {
                         <ul className="space-y-1">
                             <li>
                                 <Link
-                                    to="category/101"
+                                    to="/category/101"
                                     rel="noopener noreferrer"
                                     href="#">
                                     Mindfulness & Meditation
@@ -41,7 +41,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="category/103"
+                                    to="/category/103"
                                     rel="noopener noreferrer"
                                     href="#">
                                     Nutrition & Detox
@@ -49,7 +49,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="category/104"
+                                    to="/category/104"
                                     rel="noopener noreferrer"
                                     href="#">
                                     Self-Care & Lifestyle

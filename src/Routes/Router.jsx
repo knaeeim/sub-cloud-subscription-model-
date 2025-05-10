@@ -35,13 +35,13 @@ export const router = createBrowserRouter([
                 </PrivateRoutes>,
             },
             {
-                path: "category/:id",
+                path: "/category/:id",
                 element: <CategoryDetails></CategoryDetails>,
                 loader: () => fetch("/subscription.json"),
                 hydrateFallbackElement: <Loading></Loading>,
             },
             {
-                path: "subscription/:cat_id/:product_id",
+                path: "/subscription/:cat_id/:product_id",
                 element: (
                     <PrivateRoutes>
                         <Subscription></Subscription>

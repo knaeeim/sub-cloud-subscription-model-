@@ -7,6 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
     const { login, setUser, setLoading, GoogleSignIn } =
         useContext(AuthContext);
+        
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
